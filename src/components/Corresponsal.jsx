@@ -1,7 +1,11 @@
 import React from "react";
 
-const Redirect = () => {
-  return <div>Redirect</div>;
+const Corresponsal = () => {
+  return (
+    <div>
+      <h1>CORRESPNSAL</h1>
+    </div>
+  );
 };
 
-export default Redirect;
+export default Corresponsal;
