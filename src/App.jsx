@@ -1,12 +1,11 @@
 import React from 'react'
-import Login from "./components/Login";
+import { useEffect, useState } from "react";
 import RetirarDinero from "./components/RetirarDinero";
 import FormNuevaCuentaCorresponsal from "./components/FormNuevaCuentaCorresponsal";
 import { Routes, Route, useNavigate, } from 'react-router-dom';
 import Login from './components/Login';
 import md5 from 'md5'
 import Retiro from './components/RetirarDinero';
-import { useEffect, useState } from "react";
 
 const App = () => {
   const [login, setLogin] = useState();
