@@ -61,7 +61,7 @@ export const Navbar = () => {
                             src="/logo-usuario.png"></Avatar>
                     </IconButton>
                 </Tooltip>
-                <Menu
+                <Menu className='avatar-menu'
                     anchorEl={anchorEl}
                     id="account-menu"
                     open={open}
