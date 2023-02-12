@@ -1,66 +1,66 @@
-import { useState } from "react";
-import { Navbar } from "../layouts/Navbar";
-// import Titulo from "../components/Titulo";
-import "../styles/Login.css";
+import React from 'react'
+import { useState } from 'react'
+import { Navbar } from '../layouts/Navbar'
 
-const Login = () => {
-  const [values, setValues] = useState({
-    username: "",
-    password: "",
-  });
-
-  const handleChange = (event) => {
-    setValues({
-      ...values,
-      [event.target.name]: event.target.value,
+const Login = ({ getLogin }) => {
+    const [loginData, setLoginData] = useState({
+        usuario: '',
+        contrasena: '',
     });
-  };
+    const dataLogin = (e) => {
+        let value = e.target.value;
+        if (e.target.name === 'usuario') {
+            value = e.target.value.replace(/\D/g, '');
+        }
+        if (e.target.name === 'contrasena') {
+            value = e.target.value.replace(/\D/g, '');
+        }
+        setLoginData({ ...loginData, [e.target.name]: value });
+    };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    };
 
-  return (
-    <div>
-      <Navbar />
-      <form className="form-full-page" onSubmit={handleSubmit}>
-        <h1>CORRESPONSAL</h1>
+    return (
         <div>
-          <label htmlFor="username">
-            <span className="user">Usuario</span>{" "}
-            <span className="char">*</span> <br />
-          </label>
-          <br />
-          <input
-            type="text"
-            name="username"
-            id="username"
-            value={values.username}
-            onChange={handleChange}
-          />
+            <form className="form-full-page" onSubmit={handleSubmit}>
+                <h1>CORRESPONSAL</h1>
+                <div>
+                    <label htmlFor="username">
+                        <span className="user">Usuario</span>{" "}
+                        <span className="char">*</span> <br />
+                    </label>
+                    <br />
+                    <input
+                        type="text"
+                        name="usuario"
+                        onChange={dataLogin}
+                        value={loginData.usuario}
+                    />
+                </div>
+                <br />
+                <div>
+                    <label htmlFor="password">
+                        <span className="passworduser">Contraseña</span>
+                        <span className="char">*</span> <br />
+                    </label>
+                    <br />
+                    <input
+                        type="password"
+                        name="contrasena"
+                        id="password"
+                        onChange={dataLogin}
+                        value={loginData.contrasena}
+                    />
+                </div>
+                <br />
+                <button className="btn-consultar" onClick={(e) => getLogin(loginData)} >
+                    Consultar
+                </button>
+            </form>
         </div>
-        <br />
-        <div>
-          <label htmlFor="password">
-            <span className="passworduser">Contraseña</span>
-            <span className="char">*</span> <br />
-          </label>
-          <br />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={values.password}
-            onChange={handleChange}
-          />
-        </div>
-        <br />
-        <button className="btn-consultar" type="submit">
-          Consultar
-        </button>
-      </form>
-    </div>
-  );
-};
+    )
+}
+export default Login
 
-export default Login;
