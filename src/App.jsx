@@ -1,11 +1,27 @@
-import { useEffect, useState } from 'react';
+import React from 'react'
+import Login from "./components/Login";
+import RetirarDinero from "./components/RetirarDinero";
+import FormNuevaCuentaCorresponsal from "./components/FormNuevaCuentaCorresponsal";
 import { Routes, Route, useNavigate, } from 'react-router-dom';
 import Login from './components/Login';
 import md5 from 'md5'
 import Retiro from './components/RetirarDinero';
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [login, setLogin] = useState();
+    /* return (
+        <>
+            {
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/retirardinero" element={<RetirarDinero />} />
+                    <Route path="/crear_corresponsal" element={<FormNuevaCuentaCorresponsal />} />
+                </Routes>
+            }
+        </>
+    ) */
 
   const navigate = useNavigate();
   const URL = 'http://127.0.0.1:8000/mi_api/'
@@ -56,6 +72,7 @@ const App = () => {
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/retiro" element={<Retiro />} />
+            <Route path="/crear_corresponsal" element={<FormNuevaCuentaCorresponsal />} />
           </Routes>
         </div>
       ) : (
