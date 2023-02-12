@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navbar } from "../layouts/Navbar";
-import Titulo from "../components/Titulo";
-import "./Login.css";
+// import Titulo from "../components/Titulo";
+import "../styles/Login.css";
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -24,7 +24,7 @@ const Login = () => {
     <div>
       <Navbar />
       <form className="form-full-page" onSubmit={handleSubmit}>
-        <Titulo text="CORRESPONSAL" />
+        <h1>CORRESPONSAL</h1>
         <div>
           <label htmlFor="username">
             <span className="user">Usuario</span>{" "}

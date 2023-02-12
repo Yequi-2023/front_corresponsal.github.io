@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Titulo from "../components/Titulo";
-import "./RetirarDinero.css";
+import "../styles/RetirarDinero.css";
 
 function ValidationForm() {
   const [numeroCelular, setNumeroCelular] = useState("");
@@ -27,11 +26,11 @@ function ValidationForm() {
   return (
     <form className="form-full-page" onSubmit={validateForm}>
       <div className="form-header">
-        <Titulo text="RETIRA TU DINERO"></Titulo> <br />
+        {/* <Titulo text="RETIRA TU DINERO"></Titulo> <br /> */}
       </div>
       <img
         className="img-retirar"
-        src="/public/retirar-logo.png"
+        src="/retirar-logo.png"
         alt="retiro"
       />
       <h3 className="info-text">Ingresa tú numero de celular</h3>

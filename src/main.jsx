@@ -1,18 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import App from "./App";
 import "./index.css";
-import Login from "./pages/Login";
-import RetirarDinero from "./pages/RetirarDinero";
 
+import {BrowserRouter as Router} from 'react-router-dom';
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/retirardinero" element={<RetirarDinero />} />
-      </Routes>
-    </BrowserRouter>
+  <Router >
+    <App/>      
+  </Router>
   // </React.StrictMode>
 );
