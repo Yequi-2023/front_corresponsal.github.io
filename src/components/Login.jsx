@@ -58,8 +58,9 @@ const Login = ({ getLogin }) => {
                 <button className="btn-consultar" onClick={(e) => getLogin(loginData)} >
                     Consultar
                 </button>
+                <Link to="crear_corresponsal">Crear Usuario</Link>
             </form>
-            <Link to="crear_corresponsal">Crear Usuario</Link>
+            
         </div>
     )
 }

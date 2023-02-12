@@ -26,7 +26,7 @@ const App = () => {
       if (datos.ok) {
         const data = await datos.json();
         if (data == 'error') {
-          toast.error('El usuario no se encuentra registrado', {
+          toast.error('Credenciales incorrectas', {
             position: toast.POSITION.TOP_RIGHT
           });
           setLogin(false);
