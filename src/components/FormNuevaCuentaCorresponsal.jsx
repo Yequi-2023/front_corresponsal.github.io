@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import '../styles/formNuevaCuentaCorresponsal.css'
 import { Link } from 'react-router-dom'
+import md5 from 'md5'
 
 function FormNuevaCuentaCorresponsal() {
     const [form, setForm] = useState({})
@@ -84,7 +85,7 @@ function FormNuevaCuentaCorresponsal() {
 
                             let email = ev.target.correo.value
                             let celular = ev.target.celular.value
-                            let contraseña = ev.target.contraseña.value
+                            let contraseña = md5(ev.target.contraseña.value)
                             let total = { nombre, email, celular, contraseña, 'rol': "corresponsal" }
                             //[nombre, email, celular, contraseña]
                             setForm(total)

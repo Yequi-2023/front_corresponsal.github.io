@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Navbar } from '../layouts/Navbar'
+import { Link } from "react-router-dom"
 
 const Login = ({ getLogin }) => {
     const [loginData, setLoginData] = useState({
@@ -59,6 +59,7 @@ const Login = ({ getLogin }) => {
                     Consultar
                 </button>
             </form>
+            <Link to="crear_corresponsal">Crear Usuario</Link>
         </div>
     )
 }

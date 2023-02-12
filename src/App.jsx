@@ -5,29 +5,17 @@ import FormNuevaCuentaCorresponsal from "./components/FormNuevaCuentaCorresponsa
 import { Routes, Route, useNavigate, } from 'react-router-dom';
 import Login from './components/Login';
 import md5 from 'md5'
-import Retiro from './components/RetirarDinero';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const [login, setLogin] = useState();
-    /* return (
-        <>
-            {
-                <Routes>
-                    <Route path="/" element={<Login />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/retirardinero" element={<RetirarDinero />} />
-                    <Route path="/crear_corresponsal" element={<FormNuevaCuentaCorresponsal />} />
-                </Routes>
-            }
-        </>
-    ) */
 
   const navigate = useNavigate();
-  const URL = 'http://127.0.0.1:8000/mi_api/'
 
   const getLogin = async (credenciales) => {
     try {
-      const datos = await fetch(URL + 'login', {
+      const datos = await fetch('http://127.0.0.1:8000/mi_api/loginCorresponsal', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -38,9 +26,10 @@ const App = () => {
       if (datos.ok) {
         const data = await datos.json();
         if (data == 'error') {
-          alert('Credenciales incorrectas');
+          toast.error('El usuario no se encuentra registrado', {
+            position: toast.POSITION.TOP_RIGHT
+          });
           setLogin(false);
-          window.location.reload(true);
         } else {
           setLogin(true);
           navigate('/retiro');
@@ -65,19 +54,20 @@ const App = () => {
 
   return (
     <>
+      <ToastContainer />
       {login ? (
         <div className="App">
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/retiro" element={<Retiro />} />
-            <Route path="/crear_corresponsal" element={<FormNuevaCuentaCorresponsal />} />
+            <Route path="/retiro" element={<RetirarDinero />} />
           </Routes>
         </div>
       ) : (
         <>
           <Routes>
             <Route path="/" element={<Login getLogin={getLogin} />} />
+            <Route path="/crear_corresponsal" element={<FormNuevaCuentaCorresponsal />} />
           </Routes>
         </>
       )}
