@@ -7,14 +7,16 @@ function ValidationForm() {
   const [codigo, setCodigo] = useState("");
   const [error, setError] = useState("");
 
-  function validateForm() {
-    if (numeroCelular.length !== 10) {
+  function validateForm(e) {
+    e.preventDefault()
+    // let celular = e.target.num_cell.value
+    // let codigo = e.target.codigo.value
+    // console.log("entro")
+    if (numeroCelular.length >= 10 || numeroCelular.length == 0 || numeroCelular.length == '') {
       setError("El número de celular debe tener 10 dígitos.");
-      return;
     }
     if (codigo.length !== 4) {
       setError("El código debe tener 4 dígitos.");
-      return;
     }
     setError("");
     // Enviar formulario o continuar con otro proceso
@@ -36,6 +38,9 @@ function ValidationForm() {
       <div className="form-body">
         <div className="form-group">
           <input
+            type='number'
+            name="num_cell"
+            required
             value={numeroCelular}
             onChange={(e) => setNumeroCelular(e.target.value)}
             placeholder="Número de celular"
@@ -44,6 +49,9 @@ function ValidationForm() {
         <br />
         <div className="form-group">
           <input
+            type='number'
+            name="codigo"
+            required
             value={codigo}
             onChange={(e) => setCodigo(e.target.value)}
             placeholder="****"
