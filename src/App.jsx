@@ -7,6 +7,7 @@ import Login from './components/Login';
 import md5 from 'md5'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Historial } from './components/Historial';
 
 const App = () => {
   const [login, setLogin] = useState();
@@ -61,6 +62,7 @@ const App = () => {
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/retiro" element={<RetirarDinero />} />
+            <Route path="/historial" element={<Historial />} />
           </Routes>
         </div>
       ) : (

@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../styles/RetirarDinero.css";
 import { Navbar } from '../layouts/Navbar'
 import { ToastContainer, toast } from "react-toastify";
+import { Link } from 'react-router-dom'
 
 function ValidationForm() {
   const [numeroCelular, setNumeroCelular] = useState("");
@@ -66,6 +67,10 @@ function ValidationForm() {
     <div>
       <Navbar />
       <ToastContainer />
+      <Link to="/historial" className="contenedor-inicio-historial">
+          <img src="/logo-historial.png" alt="logo-historial" />
+          <h3>historial</h3>
+        </Link>
       <form className="form-full-page" onSubmit={validateForm}>
 
         <div className="form-header">
