@@ -16,11 +16,11 @@ function ValidationForm() {
 
   const retirarDinero = async () => {
     try {
-      if (codigo <= 0 && numeroCelular <=0 && monto <=0 && codigo == 999999) {
+      if (codigo <= 0 && numeroCelular <= 0 && monto <= 0 && codigo == 999999) {
         toast.error("La cantidad de caracteres debe ser mayor a 0", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        setCodigo(""),setNumeroCelular(""),setMonto("");
+        setCodigo(""), setNumeroCelular(""), setMonto("");
       } else {
         const datos = await fetch(
           "http://127.0.0.1:8000/mi_api/retiros",
@@ -34,13 +34,9 @@ function ValidationForm() {
               "usuario_origen": localStorage.getItem("usuarioCorresponsal")
             }),
           }
-          );
-          if (datos.ok) {
+        );
+        if (datos.ok) {
           const data = await datos.json();
-          console.log(data)
-          console.log(numeroCelular)
-          console.log(codigo)
-          console.log(monto)
           if (data.msg == "Retiro exitoso") {
             toast.success("Retiro Realizado!", {
               position: toast.POSITION.TOP_RIGHT,
@@ -71,9 +67,9 @@ function ValidationForm() {
       <Navbar />
       <ToastContainer />
       <Link to="/historial" className="contenedor-inicio-historial">
-          <img src="/logo-historial.png" alt="logo-historial" />
-          <h3>historial</h3>
-        </Link>
+        <img src="/logo-historial.png" alt="logo-historial" />
+        <h3>historial</h3>
+      </Link>
       <form className="form-full-page" onSubmit={validateForm}>
 
         <div className="form-header">

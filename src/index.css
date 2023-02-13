@@ -95,6 +95,14 @@ button {
   justify-content: space-between;
   text-align: center;
 }
+.contenedor-inicio-historial {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}
+.contenedor-inicio-historial h3 {
+  color: black;
+}
 
 .navbar .logo {
   margin-left: 10px;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Logout from '@mui/icons-material/Logout';
 import '../styles/Navbar.css'
 import {
@@ -22,12 +22,17 @@ export const Navbar = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    
+
     const logout = () => {
         localStorage.removeItem('usuarioCorresponsal');
         localStorage.removeItem('userLoginCorresponsal');
         window.location.reload(true);
     };
+    const navigate = useNavigate();
+
+    const go_to_home = () => {
+        navigate("/retiro");
+    }
 
     const fetchData = async () => {
         try {
@@ -97,6 +102,12 @@ export const Navbar = () => {
                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
                     <MenuItem className='nombre-avatar'>
                         {inputValida.nombre}
+                    </MenuItem>
+                    <MenuItem onClick={go_to_home}>
+                        <ListItemIcon>
+                            <Link to='/retiro' />
+                        </ListItemIcon>
+                        Home
                     </MenuItem>
                     <MenuItem onClick={logout}>
                         <ListItemIcon>
