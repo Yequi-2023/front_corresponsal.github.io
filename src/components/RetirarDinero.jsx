@@ -44,7 +44,9 @@ function ValidationForm() {
             toast.success("Retiro Realizado!", {
               position: toast.POSITION.TOP_RIGHT,
             });
-            window.location.reload();
+            setCodigo('')
+            setMonto('')
+            setNumeroCelular('')
           }
           if (data.msg == "Codigo invalido") {
             toast.error("Error, verifique los datos!", {
