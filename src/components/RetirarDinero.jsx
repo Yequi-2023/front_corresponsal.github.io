@@ -16,7 +16,7 @@ function ValidationForm() {
   const retirarDinero = async () => {
     try {
       if (codigo <= 0 && numeroCelular <=0 && monto <=0 && codigo == 999999) {
-        toast.error("los cantidad de caracteres debe ser mayor a 0", {
+        toast.error("La cantidad de caracteres debe ser mayor a 0", {
           position: toast.POSITION.TOP_RIGHT,
         });
         setCodigo(""),setNumeroCelular(""),setMonto("");
@@ -29,7 +29,8 @@ function ValidationForm() {
             body: JSON.stringify({
               "usuario": numeroCelular,
               "codigo": codigo,
-              "monto": monto
+              "monto": monto,
+              "usuario_origen": localStorage.getItem("usuarioCorresponsal")
             }),
           }
           );
