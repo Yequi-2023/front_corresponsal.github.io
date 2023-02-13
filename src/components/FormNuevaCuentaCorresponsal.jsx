@@ -69,10 +69,10 @@ function FormNuevaCuentaCorresponsal() {
 
     return (
         <div className="FormNuevaCuenta">
-            <div className='logo-usuario'>
+            <Link to='/' className='logo-usuario'>
                 <img src="/logo.png" alt="" />
 
-            </div>
+            </Link>
             <section className="nuevaCuenta" >
                 <div className="CNuevaCuenta">
                     <h2>CREACIÓN CORRESPONSAL</h2>
