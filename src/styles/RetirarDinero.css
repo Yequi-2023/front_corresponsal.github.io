@@ -1,6 +1,22 @@
-.form-full-page {
+.contenedor-todo-corresponsal {
+  width: 100%;
   height: 100vh;
-  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contenedor-todo-corresponsal div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: auto;
+}
+.form-full-page {
+  /* height: 100vh;
+  width: 100vw; */
   display: flex;
   justify-content: center;
   align-items: center;
