@@ -25,7 +25,7 @@ export const Historial = () => {
     return (
         <div className='contenedor-historial'>
             <Navbar />
-            <h1>Historial</h1>
+            <h1 className='titulo'>Historial</h1>
             <div className='contenedor-tabla-historial'>
                 {cargando !== false ? (
                     historial['results'].historial.length >= 1 ? (

@@ -4,13 +4,17 @@
 }
 
 .contenedor-tabla-historial {
-    margin: 50px auto auto auto;
+    margin: 24px auto auto auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .contenedor-tabla-historial table {
     margin: auto;
+}
+.titulo{
+    margin-top: 100px;
+    font-size: 40px;
 }
 
 .contenedor-tabla-historial table tr th {

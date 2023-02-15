@@ -55,7 +55,7 @@ export const Navbar = () => {
     return (
         <nav className='navbar'>
             <div className='logo-usuario'>
-                <h2 className="nombre-usuario">{inputValida.saldo}</h2>
+                <h2 className="corr">{inputValida.saldo}</h2>
                 <Tooltip title="Account settings">
                     <IconButton className='icon-button'
                         onClick={handleClick}

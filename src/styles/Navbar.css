@@ -7,3 +7,18 @@
     width: 80px !important;
     height: 80px !important;
 }
+
+.corr {
+    position: absolute;
+    left: 35%;
+    margin: 0 auto;
+    width: 32%;
+    background: #7312EF;
+    color: white;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 46px auto 0 auto;
+    font-size: 36px !important;
+  }

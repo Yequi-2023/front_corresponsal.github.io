@@ -51,7 +51,7 @@ function ValidationForm() {
         if (datos.ok) {
           const data = await datos.json();
           if (data.msg == "Transaccion exitosa") {
-            toast.success("Transferencia Realizada!", {
+            toast.success("Retiro realizado!", {
               position: toast.POSITION.TOP_RIGHT,
             });
             window.location.reload();
@@ -110,6 +110,7 @@ function ValidationForm() {
             setCodigo('')
             setMonto('')
             setNumeroCelular('')
+            window.location.reload();
           }
           if (data.msg == "Codigo invalido") {
             toast.error("Error, verifique los datos!", {
@@ -146,7 +147,6 @@ function ValidationForm() {
             src="/retirar-logo.png"
             alt="retiro"
           />
-
           <h3 className="info-text">Ingresa tú numero de celular</h3>
           <div className="form-body">
             <div className="form-group">
@@ -184,36 +184,40 @@ function ValidationForm() {
             {error && <p>{error}</p>}
           </div>
           <div className="form-footer">
-            <button type="submit" onClick={retirarDinero}>Submit</button>
+            <button type="submit" onClick={retirarDinero}>Retirar</button>
           </div>
         </form>
         <div className="transferencia">
-          <h2>RECARGA</h2>
           <form
-            className="formulario_transferencia"
+            className="formulario_transferencia recarga"
             onSubmit={(e) => datos_formulario(e)}
           >
+            <img
+            className="img-recargar"
+            src="/recarga-logo.png"
+            alt="retiro"
+          />
             <div className="cont_input1">
-              <label htmlFor="numero_cuenta">Numero de cuenta</label>
-              <input type="number" onChange={leerCuenta} required />
+              <label className="info-text2 primero">Ingresa tú numero de celular</label>
+              <input type="number" placeholder="Número de celular" onChange={leerCuenta} required />
             </div>
             <div className="campo_identificacion_transferencia">
-              <div className="cont_input2">
-                <label htmlFor="descripcion">Descripcion</label>
-                <input type="text" onChange={leerInputDescrip} />
+              <div className="info-text2">
+                <input type="text" placeholder="Descripción" onChange={leerInputDescrip} />
               </div>
             </div>
-            <div className="cont_input4">
-              <label htmlFor="valor">Valor</label>
+            <div className="info-text2">
               <input
+                className="monto-recarga"
                 type="number"
                 value={montoT}
+                placeholder="Monto a recargar"
                 onChange={leerInputMonto}
                 required
               />
             </div>
             <button className="transferir" onClick={fetchData}>
-              Transferir
+              Recargar
             </button>
           </form>
         </div>
