@@ -51,7 +51,7 @@ function ValidationForm() {
         if (datos.ok) {
           const data = await datos.json();
           if (data.msg == "Transaccion exitosa") {
-            toast.success("Retiro realizado!", {
+            toast.success("Recarga Realizada!", {
               position: toast.POSITION.TOP_RIGHT,
             });
             window.location.reload();
